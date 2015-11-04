@@ -1,6 +1,7 @@
 (prelude-require-packages
  '(multiple-cursors window-number circe jabber jabber-otr
-                    transpose-frame pyenv-mode virtualenvwrapper))
+                    transpose-frame pyenv-mode virtualenvwrapper
+                    markdown-mode sphinx-doc))
 
 (require 'jabber)
 (require 'window-number)
@@ -44,3 +45,14 @@
   "Prevent y-or-n-p from activating a dialog"
   (let ((use-dialog-box nil))
     ad-do-it))
+
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "PROGRESS(p)" "|" "DONE(d)")
+        (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+        (sequence "|" "CANCELED(c)")))
+
+(add-hook 'python-mode-hook (lambda ()
+                              (require 'sphinx-doc)
+                              (sphinx-doc-mode t)))
