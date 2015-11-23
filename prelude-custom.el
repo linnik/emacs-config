@@ -1,7 +1,7 @@
 (prelude-require-packages
  '(multiple-cursors window-number circe jabber jabber-otr
                     transpose-frame pyenv-mode virtualenvwrapper
-                    markdown-mode sphinx-doc))
+                    markdown-mode sphinx-doc material-theme))
 
 (require 'jabber)
 (require 'window-number)
@@ -56,3 +56,6 @@
 (add-hook 'python-mode-hook (lambda ()
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
+
+(require 'material-theme)
+(setq prelude-theme 'material-theme)
