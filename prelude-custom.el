@@ -64,3 +64,4 @@
 (setq-default js2-basic-offset 2)
 
 (scroll-bar-mode -1)
+(setq ibuffer-default-sorting-mode 'filename/process)
