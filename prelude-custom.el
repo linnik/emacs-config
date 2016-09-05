@@ -63,6 +63,7 @@
 (setq-default js-indent-level 2)
 (setq-default js2-basic-offset 2)
 
+(global-hl-line-mode -1)
 (scroll-bar-mode -1)
 (setq visible-bell 1)
 (setq neo-window-position 'right)
