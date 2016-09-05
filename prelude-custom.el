@@ -64,4 +64,8 @@
 (setq-default js2-basic-offset 2)
 
 (scroll-bar-mode -1)
+(setq visible-bell 1)
+(setq neo-window-position 'right)
+(setq neo-smart-open t)
+
 (setq ibuffer-default-sorting-mode 'filename/process)
