@@ -68,5 +68,6 @@
 (setq visible-bell 1)
 (setq neo-window-position 'right)
 (setq neo-smart-open t)
+(setq prelude-flyspell nil)
 
 (setq ibuffer-default-sorting-mode 'filename/process)
