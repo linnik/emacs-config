@@ -55,9 +55,6 @@
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
 
-(require 'material-theme)
-(setq prelude-theme 'material-theme)
-
 (setq-default js-indent-level 2)
 (setq-default js2-basic-offset 2)
 
