@@ -31,11 +31,6 @@
 
 (setq projectile-switch-project-action 'projectile-dired)
 
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(setq web-mode-content-types-alist
-      '(("jsx" . "\\.js[x]?\\'")))
-
 ;; reuse dired buffers
 (put 'dired-find-alternate-file 'disabled nil)
 
@@ -74,3 +69,19 @@
 (setq prelude-flyspell nil)
 
 (setq ibuffer-default-sorting-mode 'filename/process)
+
+;; web-mode configuration
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+(setq web-mode-content-types-alist
+      '(("jsx" . "\\.js[x]?\\'")))
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+    (setq web-mode-markup-indent-offset 4)
+    (setq web-mode-css-indent-offset 4)
+    (setq web-mode-code-indent-offset 2)
+    (setq web-mode-indent-style 4)
+)
+(add-hook 'web-mode-hook  'my-web-mode-hook)
