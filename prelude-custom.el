@@ -30,6 +30,9 @@
 (require 'prelude-key-chord)
 
 (setq projectile-switch-project-action 'projectile-dired)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (setq web-mode-content-types-alist
       '(("jsx" . "\\.js[x]?\\'")))
 
