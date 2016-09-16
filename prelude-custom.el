@@ -1,7 +1,8 @@
 (prelude-require-packages
- '(multiple-cursors window-number circe jabber jabber-otr
+ '(multiple-cursors window-number circe jabber jabber-otr ag
                     transpose-frame pyenv-mode virtualenvwrapper
-                    markdown-mode sphinx-doc material-theme))
+                    markdown-mode sphinx-doc material-theme
+                    ibuffer-vc))
 
 (require 'jabber)
 (require 'window-number)
@@ -22,8 +23,6 @@
 (require 'prelude-lisp)
 (require 'prelude-org)
 (require 'prelude-python)
-(require 'prelude-ruby)
-(require 'prelude-scala)
 ;; (require 'prelude-scss)
 (require 'prelude-web)
 (require 'prelude-xml)
@@ -36,11 +35,11 @@
 
 ;; disable graphical dialogs
 (defadvice yes-or-no-p (around prevent-dialog activate)
-  "Prevent yes-or-no-p from activating a dialog"
+  "Prevent `yes-or-no-p' from activating a dialog."
   (let ((use-dialog-box nil))
     ad-do-it))
 (defadvice y-or-n-p (around prevent-dialog-yorn activate)
-  "Prevent y-or-n-p from activating a dialog"
+  "Prevent `y-or-n-p' from activating a dialog."
   (let ((use-dialog-box nil))
     ad-do-it))
 
@@ -55,17 +54,15 @@
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
 
-(setq-default js-indent-level 2)
+(setq-default js-indent-level 1)
 (setq-default js2-basic-offset 2)
 
 (global-hl-line-mode -1)
 (scroll-bar-mode -1)
-(setq visible-bell 1)
-(setq neo-window-position 'right)
-(setq neo-smart-open t)
+(setq ibuffer-default-sorting-mode 'filename/process)
+(setq prelude-theme nil)
 (setq prelude-flyspell nil)
 
-(setq ibuffer-default-sorting-mode 'filename/process)
 
 ;; web-mode configuration
 
@@ -83,3 +80,13 @@
     (setq web-mode-attr-indent-offset 1)
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
+
+
+;; ibuffer-vc configuration
+
+(require 'ibuffer-vc)
+(add-hook 'ibuffer-hook
+          (lambda ()
+            (ibuffer-vc-set-filter-groups-by-vc-root)
+            (unless (eq ibuffer-sorting-mode 'alphabetic)
+              (ibuffer-do-sort-by-alphabetic))))
