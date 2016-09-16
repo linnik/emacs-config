@@ -80,5 +80,6 @@
     (setq web-mode-css-indent-offset 4)
     (setq web-mode-code-indent-offset 2)
     (setq web-mode-indent-style 4)
+    (setq web-mode-attr-indent-offset 1)
 )
 (add-hook 'web-mode-hook  'my-web-mode-hook)
