@@ -54,7 +54,7 @@
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
 
-(setq-default js-indent-level 1)
+(setq-default js-indent-level 2)
 (setq-default js2-basic-offset 2)
 
 (global-hl-line-mode -1)
