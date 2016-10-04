@@ -69,7 +69,7 @@
 (setq ibuffer-default-sorting-mode 'filename/process)
 (setq prelude-theme nil)
 (setq prelude-flyspell nil)
-
+(setq undo-tree-visualizer-timestamps t)
 
 ;; web-mode configuration
 
