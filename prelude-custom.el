@@ -19,7 +19,8 @@
 (require 'prelude-css)
 (require 'prelude-emacs-lisp)
 (require 'prelude-erc)
-(require 'prelude-js)
+;; web-mode is used for js editing instead of js2-mode
+;; (require 'prelude-js)
 (require 'prelude-lisp)
 (require 'prelude-org)
 (require 'prelude-python)
@@ -74,6 +75,7 @@
 ;; web-mode configuration
 
 (require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (setq web-mode-content-types-alist
       '(("jsx" . "\\.js[x]?\\'")))
