@@ -1,10 +1,22 @@
 (prelude-require-packages
- '(multiple-cursors window-number circe jabber jabber-otr ag
+ '(multiple-cursors window-number circe ag
                     transpose-frame pyenv-mode virtualenvwrapper
                     markdown-mode sphinx-doc material-theme
-                    ibuffer-vc))
+                    ibuffer-vc ibuffer-projectile
+                    magit magit-gitflow
+                    ))
 
-(require 'jabber)
+(disable-theme 'zenburn)
+(global-hl-line-mode -1)
+(scroll-bar-mode -1)
+(set-default-font "Monaco 12")
+(setq ibuffer-default-sorting-mode 'filename/process)
+(setq prelude-theme nil)
+(setq prelude-flyspell nil)
+(setq flx-ido-threshold 5000)
+(setq delete-by-moving-to-trash t)
+(setq trash-directory "~/.Trash")
+
 (require 'window-number)
 (window-number-mode)
 (window-number-meta-mode)
@@ -62,15 +74,9 @@
                               (require 'sphinx-doc)
                               (sphinx-doc-mode t)))
 
-(setq-default js-indent-level 2)
-(setq-default js2-basic-offset 2)
-
-(global-hl-line-mode -1)
-(scroll-bar-mode -1)
-(setq ibuffer-default-sorting-mode 'filename/process)
-(setq prelude-theme nil)
-(setq prelude-flyspell nil)
-(setq undo-tree-visualizer-timestamps t)
+;; uncomment this when using js2
+;; (setq-default js-indent-level 2)
+;; (setq-default js2-basic-offset 2)
 
 ;; web-mode configuration
 
@@ -82,20 +88,30 @@
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
-    (setq web-mode-markup-indent-offset 4)
-    (setq web-mode-css-indent-offset 4)
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
     (setq web-mode-code-indent-offset 2)
-    (setq web-mode-indent-style 4)
+    (setq web-mode-indent-style 2)
     (setq web-mode-attr-indent-offset 1)
-)
+    (turn-off-show-smartparens-mode)
+    (if (equal web-mode-content-type "html")
+        (whitespace-mode -1)))
 (add-hook 'web-mode-hook  'my-web-mode-hook)
-
 
 ;; ibuffer-vc configuration
 
-(require 'ibuffer-vc)
+;; (require 'ibuffer-vc)
+;; (add-hook 'ibuffer-hook
+;;           (lambda ()
+;;             (ibuffer-vc-set-filter-groups-by-vc-root)
+;;             (unless (eq ibuffer-sorting-mode 'filename/process)
+;;               (ibuffer-do-sort-by-filename/process))))
+
+;; ibuffer-projectile configuration
+
+(require 'ibuffer-projectile)
 (add-hook 'ibuffer-hook
           (lambda ()
-            (ibuffer-vc-set-filter-groups-by-vc-root)
+            (ibuffer-projectile-set-filter-groups)
             (unless (eq ibuffer-sorting-mode 'filename/process)
               (ibuffer-do-sort-by-filename/process))))
