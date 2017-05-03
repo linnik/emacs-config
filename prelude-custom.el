@@ -16,6 +16,8 @@
 (setq flx-ido-threshold 5000)
 (setq delete-by-moving-to-trash t)
 (setq trash-directory "~/.Trash")
+;; increase Emacs GC threshold for flx-ido
+(setq gc-cons-threshold 20000000)
 
 (require 'window-number)
 (window-number-mode)
