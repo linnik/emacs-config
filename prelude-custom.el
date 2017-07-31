@@ -113,6 +113,9 @@
       '("" invocation-name " - " (:eval (if (buffer-file-name)
                                             (abbreviate-file-name (buffer-file-name))
                                           "%b"))))
+;; Codings
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
 
 (provide 'prelude-custom)
 ;;; prelude-custom.el ends here
