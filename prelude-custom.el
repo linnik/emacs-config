@@ -100,20 +100,13 @@
         (whitespace-mode -1)))
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
-;; ibuffer-vc configuration
-
-;; (require 'ibuffer-vc)
-;; (add-hook 'ibuffer-hook
-;;           (lambda ()
-;;             (ibuffer-vc-set-filter-groups-by-vc-root)
-;;             (unless (eq ibuffer-sorting-mode 'filename/process)
-;;               (ibuffer-do-sort-by-filename/process))))
-
-;; ibuffer-projectile configuration
-
+;; Projects in dired buffer
 (require 'ibuffer-projectile)
 (add-hook 'ibuffer-hook
           (lambda ()
             (ibuffer-projectile-set-filter-groups)
             (unless (eq ibuffer-sorting-mode 'filename/process)
               (ibuffer-do-sort-by-filename/process))))
+
+(provide 'prelude-custom)
+;;; prelude-custom.el ends here
