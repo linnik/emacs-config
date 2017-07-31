@@ -108,5 +108,11 @@
             (unless (eq ibuffer-sorting-mode 'filename/process)
               (ibuffer-do-sort-by-filename/process))))
 
+;; Title format
+(setq frame-title-format
+      '("" invocation-name " - " (:eval (if (buffer-file-name)
+                                            (abbreviate-file-name (buffer-file-name))
+                                          "%b"))))
+
 (provide 'prelude-custom)
 ;;; prelude-custom.el ends here
