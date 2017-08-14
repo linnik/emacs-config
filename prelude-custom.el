@@ -2,7 +2,7 @@
  '(multiple-cursors window-number circe ag
                     transpose-frame pyenv-mode virtualenvwrapper
                     markdown-mode sphinx-doc material-theme
-                    ibuffer-vc ibuffer-projectile
+                    ibuffer-projectile ibuffer-projectile
                     magit magit-gitflow
                     ))
 
