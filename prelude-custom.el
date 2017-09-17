@@ -54,6 +54,11 @@
                                         ; was dired-up-directory
             ))
 
+;; delete buffer on quit (usually 'q' keybinding)
+(defadvice quit-window (before quit-window-always-kill)
+  "When running `quit-window', always kill the buffer."
+  (ad-set-arg 0 t))
+(ad-activate 'quit-window)
 
 ;; disable graphical dialogs
 (defadvice yes-or-no-p (around prevent-dialog activate)
