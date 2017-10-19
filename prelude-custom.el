@@ -133,6 +133,12 @@
 (add-hook 'auto-save-hook 'my-desktop-save)
 (add-hook 'focus-out-hook 'my-desktop-save)
 
+;; https://github.com/bbatsov/projectile/issues/1183#issuecomment-335569547
+;; disables project type in modeline
+(setq projectile-mode-line
+      '(:eval (format " Projectile[%s]"
+                      (projectile-project-name))))
+
 ;; smooth scrolling
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
