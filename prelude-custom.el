@@ -6,9 +6,6 @@
                     magit magit-gitflow
                     ))
 
-(disable-theme 'zenburn)
-(global-hl-line-mode -1)
-(scroll-bar-mode -1)
 (set-default-font "Monaco 12")
 (setq ibuffer-default-sorting-mode 'filename/process)
 (setq prelude-theme nil)
