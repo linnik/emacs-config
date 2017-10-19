@@ -1,10 +1,10 @@
 (prelude-require-packages
  '(multiple-cursors window-number circe ag
                     transpose-frame pyenv-mode virtualenvwrapper
-                    markdown-mode sphinx-doc material-theme
+                    markdown-mode sphinx-doc
                     ibuffer-projectile ibuffer-projectile
-                    magit magit-gitflow
-                    ))
+                    magit magit-gitflow paradox
+                    subatomic-theme))
 
 (set-default-font "Monaco 12")
 (setq ibuffer-default-sorting-mode 'filename/process)
