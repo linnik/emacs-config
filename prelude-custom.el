@@ -130,6 +130,3 @@
       (desktop-save desktop-dirname)))
 (add-hook 'auto-save-hook 'my-desktop-save)
 (add-hook 'focus-out-hook 'my-desktop-save)
-
-(provide 'prelude-custom)
-;;; prelude-custom.el ends here
