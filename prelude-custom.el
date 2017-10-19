@@ -10,11 +10,13 @@
 (setq ibuffer-default-sorting-mode 'filename/process)
 (setq prelude-theme nil)
 (setq prelude-flyspell nil)
-(setq flx-ido-threshold 5000)
+
 (setq delete-by-moving-to-trash t)
 (setq trash-directory "~/.Trash")
-;; increase Emacs GC threshold for flx-ido
+
+;; flx-ido tuning
 (setq gc-cons-threshold 20000000)
+(setq flx-ido-threshold 10000)
 
 (require 'window-number)
 (window-number-mode)
