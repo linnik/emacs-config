@@ -6,10 +6,9 @@
                     magit magit-gitflow paradox
                     subatomic-theme))
 
+(global-hl-line-mode -1)
 (set-default-font "Monaco 12")
 (setq ibuffer-default-sorting-mode 'filename/process)
-(setq prelude-theme nil)
-(setq prelude-flyspell nil)
 
 (setq delete-by-moving-to-trash t)
 (setq trash-directory "~/.Trash")
