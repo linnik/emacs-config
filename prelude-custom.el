@@ -132,6 +132,9 @@
 (add-hook 'auto-save-hook 'my-desktop-save)
 (add-hook 'focus-out-hook 'my-desktop-save)
 
+;;
+;; Flycheck
+;;
 ;; add support of local eslint
 (defun my/use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
@@ -150,6 +153,20 @@
 (setq projectile-mode-line
       '(:eval (format " Projectile[%s]"
                       (projectile-project-name))))
+
+;; use eslint with web-mode for jsx files
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+;; customize flycheck temp file prefix
+(setq-default flycheck-temp-prefix ".flycheck")
+
+;; disable json-jsonlist checking for json files
+(setq-default flycheck-disabled-checkers
+              (append flycheck-disabled-checkers
+                      '(json-jsonlist)))
+;;
+;; End of flycheck block
+;;
 
 ;; smooth scrolling
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
