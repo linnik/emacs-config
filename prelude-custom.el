@@ -175,3 +175,6 @@
 (setq scroll-step 1)
 (setq mac-mouse-wheel-mode t)
 (setq mac-mouse-wheel-smooth-scroll t)
+
+(with-eval-after-load 'smartparens
+  (show-smartparens-global-mode -1))
